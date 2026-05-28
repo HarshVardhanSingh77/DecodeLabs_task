@@ -1,324 +1,149 @@
-# DecodeLabs AI Internship
-### Artificial Intelligence Engineer Track | Batch 2026
+# 🌸 Project 2: Data Classification Using AI
+
+
+## 📌 Overview
+
+This project implements a **K-Nearest Neighbors (KNN)** classification model on the classic **Iris dataset**. It covers the complete supervised learning pipeline — from raw data to intelligent predictions — including feature scaling, train/test splitting, model tuning, evaluation, and visualization.
 
 ---
 
-## Intern Details
+## 🎯 Goal
 
-| Field | Details |
-|-------|---------|
-| **Name** | Harsh Vardhan Singh |
-| **Track** | Artificial Intelligence |
-| **Batch** | 2026 |
-| **Organisation** | DecodeLabs |
+Build a basic classification model that can identify the species of an Iris flower based on its physical measurements.
 
 ---
 
-## Internship Overview
-
-This internship follows a structured learning path from foundational AI concepts to real-world model implementation. Each week builds on the previous, progressing from rule-based logic to classical ML, recommendation systems, and finally computer vision.
+## 📁 Project Structure
 
 ```
-WEEK 1          WEEK 2          WEEK 3          WEEK 4
-  ↓               ↓               ↓               ↓
-Rule-Based      KNN &         Recommender     Image & Text
-AI Chatbot    Dashboard        Systems        Recognition
-(Pure Python)  (scikit-learn)  (Filtering)   (CV + OCR)
-```
-
----
-
-## Repository Structure
-
-```
-Decodelabs Internship/
-├── README.md                            ← This file
+decodelabs_project2/
 │
-├── WEEK-1/                              ← Rule-Based AI
-│   ├── Chatbot.py
-│   └── README.md
-│
-├── WEEK-2/                              ← Classical ML
-│   ├── iris_knn_project.py
-│   ├── iris_knn_dashboard.py
-│   └── README.md
-│
-├── WEEK-3/                              ← Recommendation Systems
-│   ├── recommender.py
-│   ├── raw_skills.csv
-│   └── README.md
-│
-└── WEEK-4/                              ← Computer Vision (Project 4)
-    ├── path1_ocr/
-    │   ├── ocr_recognition.py
-    │   ├── test.png
-    │   ├── README.md
-    │   └── ocr_output/
-    └── path2_object_detection/
-        ├── object_detection.py
-        ├── download_model.py
-        ├── test.png
-        ├── detection_output.jpg
-        ├── README.md
-        └── model/
+├── iris_knn_project.py       # Main project code
+├── iris_knn_dashboard.png    # Output visualization dashboard
+├── README.md                 # Project documentation
+└── venv/                     # Virtual environment (auto-generated)
 ```
 
 ---
 
-## Week-by-Week Progress
+## 🗃️ Dataset: The Iris Benchmark
+
+| Property   | Details                                      |
+|------------|----------------------------------------------|
+| Samples    | 150 (balanced — 50 per class)                |
+| Classes    | 3 (Setosa, Versicolor, Virginica)            |
+| Features   | 4 (Sepal Length, Sepal Width, Petal Length, Petal Width) |
+| Source     | Built-in via `sklearn.datasets.load_iris()`  |
 
 ---
 
-### WEEK 1 — Rule-Based AI Chatbot
+## ⚙️ Tech Stack
 
-**Goal:** Build a conversational chatbot using pure Python if-else logic with no external libraries.
+| Tool            | Purpose                        |
+|-----------------|--------------------------------|
+| Python 3.8+     | Programming language           |
+| scikit-learn    | KNN model, scaling, metrics    |
+| pandas          | Data handling                  |
+| numpy           | Numerical operations           |
+| matplotlib      | Plotting & dashboard           |
+| seaborn         | Heatmap visualization          |
 
-**Project:** `Chatbot.py` — Advanced Rule-Based AI Chatbot named **DecodeBot**
+---
 
-**How It Works:**
+## 🔁 Pipeline (IPO Framework)
+
 ```
-User types input
-      ↓
-Input converted to lowercase
-      ↓
-Matched against if-elif conditions
-      ↓
-Matching response printed by bot
-      ↓
-Loop continues until 'bye' or 'exit'
-```
-
-**Supported Categories:**
-- Greetings (hello, good morning, good evening)
-- About the bot (name, creator, type)
-- Health & feelings (happy, sad, tired)
-- Education (what is Python, AI, ML, chatbot)
-- Fun responses (jokes, facts, motivation)
-- System commands (help, bye, exit)
-
-**Key Concepts:**
-- Rule-Based AI and heuristic logic
-- `while True` loop for continuous conversation
-- `.lower()` for case-insensitive string matching
-- `break` statement for clean exit
-
-**Tech Stack:** Pure Python 3 — no external libraries
-
-**Sample Run:**
-```
-============================================
-🤖 ADVANCED RULE-BASED AI CHATBOT
-============================================
-You: hi
-Bot: Hello! Nice to meet you 😊
-You: motivate me
-Bot: Success starts with consistency and hard work 💪
-You: bye
-Bot: Goodbye! Have a great day 👋
+INPUT              →        PROCESS           →       OUTPUT
+─────────────────────────────────────────────────────────────
+Iris Dataset               Train-Test Split          Confusion Matrix
+Feature Scaling            KNN Algorithm             F1 Score
+                           Elbow Method              Dashboard PNG
 ```
 
-**Status:** ✅ Complete
+### Steps Implemented
+
+1. **Load & Explore** — Load dataset, check shape, class distribution, statistics
+2. **Feature Scaling** — `StandardScaler` → mean=0, variance=1
+3. **Train/Test Split** — 80% train / 20% test with shuffle + stratify
+4. **Find Optimal K** — Elbow method tested K=1 to K=20
+5. **Train Model** — `KNeighborsClassifier(n_neighbors=optimal_k)`
+6. **Evaluate** — Accuracy, F1 Score, Confusion Matrix, Classification Report
+7. **Visualize** — 9-panel dashboard saved as PNG
+8. **Live Predictions** — 3 custom flower samples classified in real time
 
 ---
 
-### WEEK 2 — Classical Machine Learning (KNN)
+## 📊 Results
 
-**Goal:** Build and visualise a K-Nearest Neighbours classifier on the Iris dataset.
+| Metric         | Score     |
+|----------------|-----------|
+| Accuracy       | **96.67%** |
+| F1 Score       | **0.9666** |
+| Optimal K      | 1          |
+| Train Samples  | 120        |
+| Test Samples   | 30         |
 
-**Projects:**
-- `iris_knn_project.py` — KNN classifier implementation
-- `iris_knn_dashboard.py` — Interactive visual dashboard
+### Per-Class Performance
 
-**Key Concepts:**
-- K-Nearest Neighbours algorithm
-- Training and testing splits
-- Model accuracy evaluation
-- Data visualisation
-
-**Tech Stack:** Python, scikit-learn, pandas, matplotlib
-
-**Status:** ✅ Complete
-
----
-
-### WEEK 3 — Recommendation Systems
-
-**Goal:** Build a content-based recommendation engine using skill data.
-
-**Projects:**
-- `recommender.py` — Recommendation engine
-- `raw_skills.csv` — Skills dataset
-
-**Key Concepts:**
-- Content-based filtering
-- Cosine similarity
-- Feature extraction from raw data
-- Building recommendation pipelines
-
-**Tech Stack:** Python, pandas, scikit-learn, NumPy
-
-**Status:** ✅ Complete
+| Class       | Precision | Recall | F1 Score |
+|-------------|-----------|--------|----------|
+| Setosa      | 1.00      | 1.00   | 1.00     |
+| Versicolor  | 0.91      | 1.00   | 0.95     |
+| Virginica   | 1.00      | 0.90   | 0.95     |
 
 ---
 
-### WEEK 4 — Computer Vision: Image & Text Recognition (Project 4)
+## 🚀 How to Run
 
-**Goal:** Implement a basic image or text recognition task using pre-trained AI libraries — demonstrating the ability to integrate pre-trained models into a functional workflow.
+### 1. Clone / Download the project folder
 
-This is the **Optional Mastery Phase** of the internship, demonstrating model implementation skills beyond the core curriculum.
-
----
-
-#### Path 1: Optical Character Recognition (OCR)
-
-**Goal:** Extract machine-readable text from raw images using pytesseract.
-
-**Pipeline:**
-```
-Image → Grayscale → Gaussian Blur → Otsu Thresholding → Deskew → OCR → Confidence Filter
-```
-
-**Results:**
-- Words Extracted: 96
-- Average Confidence: 93.36%
-- Accuracy Gate: ✅ PASS (≥ 80%)
-
-**Tech Stack:** Python, OpenCV, pytesseract, Tesseract v5, NumPy, Pillow
-
----
-
-#### Path 2: Object Detection with MobileNet-SSD
-
-**Goal:** Identify and locate physical objects in images using a pre-trained deep learning model.
-
-**Pipeline:**
-```
-Image → Blob Construction (300x300) → MobileNet-SSD Forward Pass → Confidence Filter → Bounding Boxes
-```
-
-**Results:**
-- Objects Detected: 3 (bus 98.6%, person 92.3%, person 86.6%)
-- Accuracy Gate: ✅ PASS (≥ 80%)
-
-**Tech Stack:** Python, OpenCV (cv2.dnn), MobileNet-SSD (Caffe), NumPy
-
----
-
-#### Week 4 Validation Checkpoints
-
-| # | Checkpoint | Path 1 OCR | Path 2 Detection |
-|---|-----------|-----------|-----------------|
-| 1 | Library Integration | ✅ | ✅ |
-| 2 | Pre-Processing Integrity | ✅ | ✅ |
-| 3 | Accuracy Benchmarking ≥ 80% | ✅ 93.36% | ✅ 92.3% avg |
-| 4 | Visual Confirmation | ✅ | ✅ |
-
-**Status:** ✅ Complete
-
----
-
-## Skills Demonstrated
-
-| Skill | Where Applied |
-|-------|--------------|
-| Python programming | All weeks |
-| Rule-based logic & if-else | Week 1 |
-| String manipulation | Week 1 |
-| Loop control & flow | Week 1 |
-| Data preprocessing | Week 2, 3, 4 |
-| Classical ML (KNN) | Week 2 |
-| Model evaluation & accuracy | Week 2, 4 |
-| Data visualisation | Week 2 |
-| Recommendation systems | Week 3 |
-| Cosine similarity | Week 3 |
-| OpenCV image processing | Week 4 |
-| OCR & text extraction | Week 4 Path 1 |
-| Deep learning inference (DNN) | Week 4 Path 2 |
-| Transfer learning | Week 4 Path 2 |
-| Confidence thresholding | Week 4 |
-| Bounding box decoding | Week 4 Path 2 |
-
----
-
-## Overall Progress
-
-| Week | Project | Status |
-|------|---------|--------|
-| Week 1 | Rule-Based AI Chatbot (DecodeBot) | ✅ Complete |
-| Week 2 | KNN Classifier & Dashboard | ✅ Complete |
-| Week 3 | Recommendation System | ✅ Complete |
-| Week 4 | OCR + Object Detection (Project 4) | ✅ Complete |
-
----
-
-## Setup & Installation
-
-### Prerequisites
-- Python 3.10+
-- pip
-
-### Week 1 — No dependencies needed
+### 2. Create and activate virtual environment
 ```bash
-cd "WEEK-1"
-python Chatbot.py
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
 ```
 
-### Week 2 & 3
+### 3. Install dependencies
 ```bash
-pip install numpy pandas scikit-learn matplotlib
+pip install scikit-learn pandas numpy matplotlib seaborn
 ```
 
-### Week 4 — All dependencies
+### 4. Run the project
 ```bash
-pip install opencv-python pytesseract Pillow numpy
-
-# Install Tesseract engine (Windows)
-# Download from: https://github.com/UB-Mannheim/tesseract/wiki
-
-# Download MobileNet-SSD model
-cd WEEK-4/path2_object_detection
-python download_model.py
-```
-
----
-
-## How to Run Each Project
-
-### Week 1 — Chatbot
-```bash
-cd WEEK-1
-python Chatbot.py
-```
-
-### Week 2 — KNN
-```bash
-cd WEEK-2
 python iris_knn_project.py
-python iris_knn_dashboard.py
 ```
 
-### Week 3 — Recommender
-```bash
-cd WEEK-3
-python recommender.py
-```
-
-### Week 4 — OCR
-```bash
-cd WEEK-4/path1_ocr
-python ocr_recognition.py test.png
-```
-
-### Week 4 — Object Detection
-```bash
-cd WEEK-4/path2_object_detection
-python download_model.py        # run once
-python object_detection.py test.png
-```
+### 5. View the dashboard
+Open `iris_knn_dashboard.png` in your project folder.
 
 ---
 
-## Author
+## 📈 Dashboard Panels
 
-**Harsh Vardhan Singh**
-DecodeLabs AI Internship | Batch 2026
+The output dashboard (`iris_knn_dashboard.png`) contains 9 panels:
+
+1. Class Distribution Bar Chart
+2. Feature Correlation Heatmap
+3. Petal Dimensions Scatter Plot
+4. Elbow Method — Error Rate vs K
+5. F1 Score vs K
+6. Confusion Matrix
+7. Per-Class F1 Score
+8. Precision vs Recall
+9. Summary Results Card
+
+---
+
+## 💡 Key Concepts Used
+
+- **Supervised Learning** — Model learns from labeled data
+- **StandardScaler** — Removes bias caused by different feature scales
+- **KNN Algorithm** — Classifies based on majority vote of K nearest neighbors
+- **Elbow Method** — Finds the optimal K with lowest error rate
+- **Confusion Matrix** — Visual breakdown of TP, FP, FN, TN
+- **F1 Score** — Harmonic mean of Precision and Recall 
