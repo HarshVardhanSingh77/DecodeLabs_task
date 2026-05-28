@@ -1,0 +1,21 @@
+job_role,skills
+Data Scientist,Python SQL Machine_Learning Data_Analysis Statistics TensorFlow Pandas NumPy Visualization Jupyter
+ML Engineer,Python TensorFlow PyTorch Machine_Learning Deep_Learning MLOps Docker Kubernetes Data_Pipelines NumPy
+Backend Developer,Java Python SQL APIs REST Docker Node.js Databases Git Microservices
+Frontend Developer,JavaScript React HTML CSS TypeScript UI_Design Git REST APIs Redux
+Full Stack Developer,JavaScript React Node.js SQL HTML CSS Python Git REST Docker
+DevOps Engineer,AWS Docker Kubernetes CI_CD Linux Git Automation Shell_Scripting Terraform Monitoring
+Cloud Architect,AWS Azure Google_Cloud Docker Kubernetes Networking Security Automation Terraform Infrastructure
+Data Engineer,Python SQL Spark Hadoop ETL Data_Pipelines Airflow Cloud_Storage BigQuery Kafka
+Cybersecurity Analyst,Networking Security Ethical_Hacking Linux Firewalls Cryptography Python Penetration_Testing SIEM Compliance
+Mobile Developer,Swift Kotlin Java React_Native Flutter UI_Design REST APIs Git Android iOS
+AI Research Scientist,Python Deep_Learning NLP Computer_Vision PyTorch TensorFlow Mathematics Statistics Research Publications
+Database Administrator,SQL MySQL PostgreSQL MongoDB Oracle Performance_Tuning Backup Security Data_Modeling NoSQL
+System Administrator,Linux Windows Networking Shell_Scripting Monitoring Automation Virtualization Security DNS Active_Directory
+Business Intelligence Analyst,SQL Power_BI Tableau Excel Data_Analysis Visualization Statistics Reporting ETL Python
+Blockchain Developer,Solidity Ethereum Web3 Smart_Contracts Cryptography JavaScript Python Distributed_Systems Security DeFi
+Game Developer,C++ Unity C# OpenGL Game_Design Physics_Engine 3D_Modeling Optimization Multiplayer DirectX
+Embedded Systems Engineer,C C++ RTOS Microcontrollers Hardware Assembly Debugging Firmware IoT Electronics
+NLP Engineer,Python NLP Transformers BERT Hugging_Face Deep_Learning TensorFlow PyTorch Text_Processing Linguistics
+Computer Vision Engineer,Python OpenCV Deep_Learning CNN TensorFlow PyTorch Image_Processing CUDA NumPy Research
+Site Reliability Engineer,Python Linux Docker Kubernetes Monitoring CI_CD Automation Shell_Scripting Incident_Management SLOs
